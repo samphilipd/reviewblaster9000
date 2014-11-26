@@ -17,7 +17,6 @@ gem 'bootstrap-sass'
 # Javascript libs
 gem 'jquery-rails'
 gem 'ember-source', '~>1.8.0'
-# Other libraries including ember-data are managed using bower, see /vendor/assets/javascripts
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby

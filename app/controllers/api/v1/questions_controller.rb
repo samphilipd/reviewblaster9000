@@ -20,7 +20,7 @@ module Api
         if @question.update(question_params)
           render json: @question, status: 200
         else
-          render json: { :errors => @question.errors }, status: 422
+          render json: { :errors => @question.errors }, status: 400
         end
       end
 

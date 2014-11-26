@@ -5,7 +5,7 @@ A simple demonstration app using Rails and Ember.js.
 
 This app contains examples of:
 
-- basic TDD
+- basic TDD (test using `$rake spec`)
 - Ember.js as a client-side javascript framework
 - a mix of javascript and coffeescript
 - a simple database-backed Rails API

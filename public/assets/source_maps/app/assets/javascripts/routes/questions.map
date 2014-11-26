@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/routes/questions.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,IAAI,CAAC,cAAL,GAAsB,EAAE,CAAC,KAAK,CAAC,MAAT,CACpB;AAAA,IAAA,KAAA,EAAO,SAAA,GAAA;aACL,IAAC,CAAA,KAAK,CAAC,IAAP,CAAY,UAAZ,EADK;IAAA,CAAP;GADoB,CAAtB,CAAA;AAAA"
+}

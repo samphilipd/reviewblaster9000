@@ -1,0 +1,7 @@
+<ul>
+{{#each question in controller}}
+  <li>Name: {{question.name}}, rating: {{question.rating}}</li>
+{{else}}
+  <li>No questions!</li>
+{{/each}}
+</ul>

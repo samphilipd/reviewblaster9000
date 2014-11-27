@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/controllers/show-results.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,IAAI,CAAC,6BAAL,GAAqC,EAAE,CAAC,eAAe,CAAC,MAAnB,CACnC;AAAA,IAAA,cAAA,EAAgB,UAAhB;GADmC,CAArC,CAAA;AAAA"
+}

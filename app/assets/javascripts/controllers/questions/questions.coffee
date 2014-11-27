@@ -1,4 +1,4 @@
-Rbnk.QuestionsController = Em.ArrayController.extend
+Rbnk.QuestionsIndexController = Em.ArrayController.extend
   itemController: 'question'
   isSubmitting: false
 

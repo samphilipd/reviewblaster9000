@@ -39,3 +39,14 @@ Rbnk.QuestionController = Em.ObjectController.extend
   ratingAt100: (->
     @get('rating') == 100
   ).property('rating')
+
+  ratedStatusClass: (->
+    avg = @get('average_rating')
+    console.log('-- avg: ' + avg)
+    if avg <= 25
+      "progress-bar-danger"
+    else if avg <= 50
+      "progress-bar-warning"
+    else
+      "progress-bar-success"
+  ).property('average_rating')

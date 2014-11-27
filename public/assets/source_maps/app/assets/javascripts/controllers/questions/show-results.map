@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/controllers/questions/show-results.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,IAAI,CAAC,8BAAL,GAAsC,EAAE,CAAC,eAAe,CAAC,MAAnB,CACpC;AAAA,IAAA,cAAA,EAAgB,UAAhB;AAAA,IAEA,eAAA,EAAiB,CAAC,SAAA,GAAA;AAGhB,MAAA,OAAO,CAAC,GAAR,CAAY,gBAAZ,EAA8B,IAAC,CAAA,GAAD,CAAK,SAAL,CAA9B,CAAA,CAAA;aACA,IAAC,CAAA,GAAD,CAAK,aAAL,CAAmB,CAAC,GAApB,CAAwB,iBAAxB,EAJgB;IAAA,CAAD,CAKhB,CAAC,QALe,CAKN,+BALM,CAFjB;GADoC,CAAtC,CAAA;AAAA"
+}

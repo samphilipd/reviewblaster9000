@@ -1,0 +1,25 @@
+<div class="list-group">
+{{#each question in controller}}
+  <div class="list-group-item">
+    <h4 class="list-group-item-heading">{{question.name}}</h4>
+    <div class="list-group-item-text">
+        {{#if question.average_rating}}
+          <div class="progress">
+            <div {{bind-attr class=":progress-bar question.ratedStatusClass"}} role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{unbound question.average_rating}}%;">
+              <span>{{question.truncated_average_rating}}%</span>
+            </div>
+         </div>
+        {{else}}
+          Nobody has rated this question yet!
+        {{/if}}
+    </div>
+  </div>
+{{else}}
+  <div class="list-group-item">
+    <h4 class="list-group-item-heading">No questions!</h4>
+  </div>
+{{/each}}
+<div class="summary">
+  <h4>Responses: {{total_responses}}</h4>
+</div>
+

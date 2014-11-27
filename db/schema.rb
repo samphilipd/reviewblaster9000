@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141126122337) do
 
   create_table "questions", force: true do |t|
     t.string   "name"
-    t.integer  "rating",     default: 0, null: false
+    t.integer  "rating",     default: -1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

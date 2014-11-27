@@ -24,6 +24,11 @@ module Api
         end
       end
 
+      def reset
+        Question.update_all(rating: -1)
+        render json: {}, status: 200
+      end
+
       private
         def question_params
           params.require(:question).permit(:rating)

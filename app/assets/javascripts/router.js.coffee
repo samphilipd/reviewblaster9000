@@ -4,5 +4,6 @@ Rbnk.Router.reopen
   rootURL: '/'
 
 Rbnk.Router.map ()->
-  @resource 'questions'
+  @resource 'questions', {path: '/'}
+  @route 'thankyou'
 

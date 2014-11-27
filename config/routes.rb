@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   # API routes go here
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
-      resources :questions, only: [:index, :show, :update]
+      resources :questions, only: [:index, :show, :update] do
+        collection do
+          post 'reset' => 'questions#reset'
+        end
+      end
     end
   end
 

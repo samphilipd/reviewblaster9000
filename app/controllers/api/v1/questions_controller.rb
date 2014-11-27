@@ -16,21 +16,17 @@ module Api
 
       # PUT /questions/:id
       def update
-        @question = Question.find(params[:id])
-        if @question.update(question_params)
-          render json: @question, status: 200
+        # abstract away the answer model to simplify client-side logic
+        @answer = Answer.new(question_id: params[:id])
+        if @answer.update(answer_params)
+          render json: {}, status: 200
         else
-          render json: { :errors => @question.errors }, status: 400
+          render json: { :errors => @answer.errors }, status: 400
         end
       end
 
-      def reset
-        Question.update_all(rating: -1)
-        render json: {}, status: 200
-      end
-
       private
-        def question_params
+        def answer_params
           params.require(:question).permit(:rating)
         end
     end

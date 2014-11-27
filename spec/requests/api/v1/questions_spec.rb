@@ -25,23 +25,25 @@ describe '/api/v1/questions' do
     expect(response_json['question']['id'].to_i).to eq question_id
   end
 
-  it 'updates a question with a rating' do
+  it 'creates a new answer model on update' do
     question = Question.all.sample
-    put "api/v1/questions/#{question.id}", {rating: 50}.to_json, {'Content-Type' => 'application/json'}
+    put "api/v1/questions/#{question.id}", {rating: 42}.to_json, {'Content-Type' => 'application/json'}
 
-    question.reload
+    answer = Answer.find_by(rating: 42)
+    expect(answer.question_id).to eq question.id
+
     response_json = JSON.parse(response.body)
     expect(response.code).to eq "200"
-    expect(question.rating).to eq 50
   end
 
   it 'returns an error if updating question with invalid rating' do
+    n_answers = Answer.count
     question = Question.all.sample
     put "api/v1/questions/#{question.id}", {rating: 'foobar'}.to_json, {'Content-Type' => 'application/json'}
 
     response_json = JSON.parse(response.body)
     expect(response.code).to eq "400"
-    expect(question.rating).to eq nil
+    expect(Answer.count).to eq n_answers # no new answers were created
     expect(response_json).to eq({"errors" => {"rating" => ["is not a number"]}})
   end
 end

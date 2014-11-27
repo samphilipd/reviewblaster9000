@@ -10,7 +10,7 @@
 #
 
 class Question < ActiveRecord::Base
-  validates :name, presence: true
   # set rating to -1 to signify unrated
-  validates :rating, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}
+  validates :name, presence: true
+  has_many :answers
 end

@@ -13,7 +13,8 @@ This app contains examples of:
 - a simple database-backed Rails API
 - JSON serialization with Active Model Serializers
 - JSON deserialization with ember-data
-- HTML/CSS templating using handlebars
+- HTML templating using handlebars
+- CSS styling using SASS and bootstrap
 
 
 Copyright and license

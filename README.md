@@ -3,6 +3,8 @@ Review Blaster 9000
 
 A simple demonstration app using Rails and Ember.js.
 
+A deployed version can be seen here: https://reviewblaster9000.herokuapp.com/
+
 This app contains examples of:
 
 - basic TDD (test using `$rake spec`)

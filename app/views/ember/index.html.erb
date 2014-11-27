@@ -7,15 +7,16 @@
     <%= javascript_include_tag :application %>
     <title>Review Blaster 9000</title>
   </head>
-  <!-- If you're reading this, you're probably looking for the Easter Egg. Try typing 'Rbnk.PinballGame()' at the terminal... -->
+  <!-- If you're reading this, you're probably looking for the Easter Egg. Try running Rbnk.PinballGame() in the console... (Windows users: sorry, get an OS that supports Unicode) -->
   <body>
-<!-- ensure images are preloaded -->
+<!-- Start preload images -->
 <img src="/img/0_prct_active.png" style=display:none;>
 <img src="/img/25_prct_active.png" style=display:none;>
 <img src="/img/50_prct_active.png" style=display:none;>
 <img src="/img/75_prct_active.png" style=display:none;>
 <img src="/img/100_prct_active.png" style=display:none;>
 <i class="fa fa-spinner fa-spin" style="display:none;"></i>
+<!-- End preload images -->
       <%= yield %>
   </body>
 </html>

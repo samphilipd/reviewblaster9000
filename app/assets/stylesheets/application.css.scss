@@ -1,7 +1,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.row {
+  // give it some breathing room
+  // padding-top: 2em;
+}
+
 .main {
   // space for navbar
-  margin-top: 50px;
+  margin-top: 85px;
+}
+
+.list-group {
+  .list-group-item-heading {
+    text-align: center;
+  }
+  .list-group-item-text {
+    .prct-circles {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

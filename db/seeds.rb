@@ -1,4 +1,5 @@
 Question.destroy_all
+Answer.destroy_all
 
 questions = [
   Question.new(name: 'Overall satisfaction of service:'),

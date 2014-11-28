@@ -1,6 +1,11 @@
-Rbnk.QuestionsIndexController = Em.ArrayController.extend
+Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
+  sortProperties: ['integerId']
+  sortAscending: true
   itemController: 'question'
   isSubmitting: false
+
+  page: 1
+  perPage: 4
 
   actions:
     submit: ->

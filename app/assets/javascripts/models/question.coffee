@@ -7,3 +7,7 @@ Rbnk.Question = DS.Model.extend
   truncated_average_rating: (->
     parseFloat(Math.round(@get('average_rating') * 100) / 100).toFixed(2)
   ).property('average_rating')
+
+  integerId: (->
+    parseInt(@get('id'))
+  ).property('id')

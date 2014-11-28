@@ -7,14 +7,15 @@ A deployed version can be seen here: https://reviewblaster9000.herokuapp.com/
 
 This app contains examples of:
 
-- basic TDD (test using `$rake spec`)
+- TDD with rspec (test using `$rake spec`)
 - Ember.js as a client-side javascript framework
-- a mix of javascript and coffeescript
-- a simple database-backed Rails API
+- Coffeescript
+- A simple database-backed Rails API (using postgres)
 - JSON serialization with Active Model Serializers
 - JSON deserialization with ember-data
 - HTML templating using handlebars
 - CSS styling using SASS and bootstrap
+- Internationalization (Spanish and English) using i18n-js
 
 
 Copyright and license

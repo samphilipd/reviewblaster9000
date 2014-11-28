@@ -7,6 +7,9 @@ en:
   results: 'Results'
   no_questions: 'No questions!'
   next: 'NEXT'
+  please_fill_all_questions: 'Please answer all the questions before submitting!'
+  submit: 'Submit!'
+  no_ratings_for_question: 'No responses for this question.'
 
 es:
   hello: 'Hola Mundo!'
@@ -17,3 +20,6 @@ es:
   results: 'Resultados'
   no_questions: 'No hay preguntas!'
   next: 'SIGUIENTE'
+  submit: 'Enviar!'
+  please_fill_all_questions: 'Por favor, rellene todas las preguntas antes de enviar.'
+  no_ratings_for_question: 'No hay respuestas para esta pregunta.'

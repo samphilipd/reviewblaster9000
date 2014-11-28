@@ -6,6 +6,9 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
 
   page: 1
   perPage: 4
+  isLastPage: (->
+    @get('page') == @get('pages')
+  ).property('page', 'pages')
 
   actions:
     submit: ->
@@ -15,7 +18,7 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
       )
 
       if questions.get('length') < @get('model').get('length')
-        alert('Please rate all the questions on this page!')
+        alert(I18n.t('please_fill_all_questions'))
       else
         # console.log('DEBUG: saving questions...')
         self = @
@@ -29,4 +32,8 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
           self.set('isSubmitting', false)
           self.transitionToRoute('thankyou')
         )
+
+    nextPage: ->
+      if @get('page') <= @get('pages') - 1
+        @incrementProperty('page')
 

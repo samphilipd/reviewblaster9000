@@ -1,11 +1,13 @@
-<div class="alert alert-success" role="alert">Thank you!</div>
-<button {{action 'reset'}} type="button" class="btn btn-primary btn-lg btn-block">
-  {{#if controller.isResetting}}
-    <i class="fa fa-spinner fa-spin"></i>
-  {{else}}
-    Play it again, Sam!
-  {{/if}}
-</button>
-<div class="summary">
-  {{#link-to 'questions.show-results'}}View results{{/link-to}}
-<div>
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+  <div class="alert alert-success" role="alert">Thank you!</div>
+  <button {{action 'reset'}} type="button" class="btn btn-primary btn-lg btn-block">
+    {{#if controller.isResetting}}
+      <i class="fa fa-spinner fa-spin"></i>
+    {{else}}
+      Play it again, Sam!
+    {{/if}}
+  </button>
+  <div class="summary">
+    {{#link-to 'questions.show-results'}}View results{{/link-to}}
+  <div>
+</div>

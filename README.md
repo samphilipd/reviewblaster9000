@@ -16,6 +16,7 @@ This app contains examples of:
 - HTML templating using handlebars
 - CSS styling using SASS and bootstrap
 - Internationalization (Spanish and English) using i18n-js
+- Dynamic pagination
 
 
 Copyright and license

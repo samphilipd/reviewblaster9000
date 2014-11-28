@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/routes/application.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,IAAI,CAAC,gBAAL,GAAwB,EAAE,CAAC,KAAK,CAAC,MAAT,CACtB;AAAA,IAAA,OAAA,EACE;AAAA,MAAA,WAAA,EAAa,SAAA,GAAA;AACX,QAAA,IAAI,CAAC,MAAL,GAAc,IAAd,CAAA;eAEA,IAAI,CAAC,KAAL,CAAA,EAHW;MAAA,CAAb;AAAA,MAIA,WAAA,EAAa,SAAA,GAAA;AACX,QAAA,IAAI,CAAC,MAAL,GAAc,IAAd,CAAA;eACA,IAAI,CAAC,KAAL,CAAA,EAFW;MAAA,CAJb;KADF;GADsB,CAAxB,CAAA;AAAA"
+}

@@ -40,7 +40,7 @@
   </div>
 {{else}}
   <div class="list-group-item">
-    <h4 class="list-group-item-heading">No questions!</h4>
+    <h4 class="list-group-item-heading">{{i18n no_questions}}</h4>
   </div>
 {{/each}}
 </div>
@@ -50,7 +50,7 @@
       {{#if controller.isSubmitting}}
         <i class="fa fa-spinner fa-spin"></i>
       {{else}}
-        NEXT
+        {{i18n next}}
       {{/if}}
     </button>
   {{/if}}

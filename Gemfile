@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'ember-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'i18n-js'
 
 # Javascript libs
 gem 'jquery-rails'

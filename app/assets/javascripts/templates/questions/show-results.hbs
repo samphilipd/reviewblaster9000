@@ -10,7 +10,7 @@
             </div>
          </div>
         {{else}}
-          Nobody has rated this question yet!
+          {{i18n no_ratings_for_question}}
         {{/if}}
     </div>
   </div>
@@ -20,6 +20,6 @@
   </div>
 {{/each}}
 <div class="summary">
-  <h4>Responses: {{total_responses}}</h4>
+  <h4>{{i18n responses}}: {{total_responses}}</h4>
 </div>
 

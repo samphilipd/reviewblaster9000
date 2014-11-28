@@ -1,0 +1,19 @@
+en:
+  hello: 'Hello World!'
+  english: 'English'
+  spanish: 'Spanish'
+  responses: 'Responses'
+  review: 'Review'
+  results: 'Results'
+  no_questions: 'No questions!'
+  next: 'NEXT'
+
+es:
+  hello: 'Hola Mundo!'
+  english: 'Inglés'
+  spanish: 'Español'
+  responses: 'Respuestas'
+  review: 'Cuestionario'
+  results: 'Resultados'
+  no_questions: 'No hay preguntas!'
+  next: 'SIGUIENTE'

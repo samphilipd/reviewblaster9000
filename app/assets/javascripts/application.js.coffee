@@ -1,5 +1,7 @@
 #= require jquery
 #= require bootstrap-sprockets
+#= require i18n
+#= require i18n/translations
 #= require handlebars
 #= require ember
 #= require ember-data
@@ -12,4 +14,3 @@ window.Rbnk = Ember.Application.create(
   LOG_TRANSITIONS: true,
   LOG_ACTIVE_GENERATION: true
 )
-

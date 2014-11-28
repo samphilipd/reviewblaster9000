@@ -1,19 +1,19 @@
 Rbnk.QuestionController = Em.ObjectController.extend
   actions:
     setRating0: ->
-      console.log('setRating0!')
+      # console.log('setRating0!')
       @set('rating', 0)
     setRating25: ->
-      console.log('setRating25!')
+      # console.log('setRating25!')
       @set('rating', 25)
     setRating50: ->
-      console.log('setRating50!')
+      # console.log('setRating50!')
       @set('rating', 50)
     setRating75: ->
-      console.log('setRating75!')
+      # console.log('setRating75!')
       @set('rating', 75)
     setRating100: ->
-      console.log('setRating100!')
+      # console.log('setRating100!')
       @set('rating', 100)
 
   unrated: (->
@@ -42,7 +42,7 @@ Rbnk.QuestionController = Em.ObjectController.extend
 
   ratedStatusClass: (->
     avg = @get('average_rating')
-    console.log('-- avg: ' + avg)
+    # console.log('-- avg: ' + avg)
     if avg <= 25
       "progress-bar-danger"
     else if avg <= 50

@@ -5,7 +5,7 @@ A simple demonstration app using Rails and Ember.js.
 
 A deployed version can be seen here: https://reviewblaster9000.herokuapp.com/
 
-This app contains examples of:
+Included features:
 
 - TDD with rspec (test using `$rake spec`)
 - Ember.js as a client-side javascript framework
@@ -17,6 +17,7 @@ This app contains examples of:
 - CSS styling using SASS and bootstrap
 - Internationalization (Spanish and English) using i18n-js
 - Dynamic pagination
+- A sense of humour
 
 
 Copyright and license

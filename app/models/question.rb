@@ -15,11 +15,20 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   def average_rating
-    answers = Answer.where(question_id: self.id).pluck(:rating)
+    answers = Answer.where(question_id: self.id, flavour: 'Rating').pluck(:rating)
     if answers.length == 0
       return nil
     else
       answers.inject(0) {|acc, rating| acc + rating}.to_f / answers.length
+    end
+  end
+
+  def percentage_true
+    answers = Answer.where(question_id: self.id, flavour: 'Predicate').pluck(:true_false)
+    if answers.length == 0
+      return nil
+    else
+      (answers.select {|bool| bool == true}.count.to_f / answers.length) * 100
     end
   end
 

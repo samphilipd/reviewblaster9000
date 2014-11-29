@@ -9,3 +9,4 @@ Rbnk.ApplicationStore = DS.Store.extend({
 Rbnk.ApplicationAdapter = DS.ActiveModelAdapter.extend({
   namespace: 'api/v1'
 })
+

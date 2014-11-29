@@ -10,7 +10,17 @@
 #
 
 class Answer < ActiveRecord::Base
+  validates_with AnswerValidator
   belongs_to :question
   validates_presence_of :question
-  validates :rating, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}
+  before_validation :ensure_only_flavour_field
+
+  private
+    def ensure_only_flavour_field
+      if self.flavour == 'Rating'
+        self.true_false = nil
+      elsif self.flavour == 'Predicate'
+        self.rating = nil
+      end
+    end
 end

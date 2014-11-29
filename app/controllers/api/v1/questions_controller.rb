@@ -27,7 +27,7 @@ module Api
 
       private
         def answer_params
-          params.require(:question).permit(:rating)
+          params.require(:question).permit(:flavour, :rating, :true_false)
         end
     end
   end

@@ -10,6 +10,12 @@ en:
   please_fill_all_questions: 'Please answer all the questions before submitting!'
   submit: 'Submit!'
   no_ratings_for_question: 'No responses for this question.'
+  failed_to_save_questions: "Sorry, something went wrong :(. We weren't able to save your answers, please try again later."
+  said_true: 'said true'
+  said_false: 'said false'
+  no_questions: 'No questions'
+  thanks_for_response: 'Thank you for your response!'
+  view_results: 'View results'
 
 es:
   hello: 'Hola Mundo!'
@@ -23,3 +29,9 @@ es:
   submit: 'Enviar!'
   please_fill_all_questions: 'Por favor, rellene todas las preguntas antes de enviar.'
   no_ratings_for_question: 'No hay respuestas para esta pregunta.'
+  failed_to_save_questions: "Perdon, algo salió mal. Tus respuestas no fueron guardados, por favor, pruebe mas tarde."
+  said_true: 'dijieron verdad'
+  said_false: 'dijieron falso'
+  no_questions: 'Ningunos preguntas'
+  thanks_for_response: 'Gracias por su respuesta!'
+  view_results: 'Ver respuestas'

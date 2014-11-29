@@ -1,0 +1,32 @@
+<div class="prct-circles">
+  {{!-- buttons go here! --}}
+  {{#if question.unrated}}
+    <img {{action 'setRating0'}} class="prct-circle" src="/img/0_prct_grey.png" />
+  {{else}}
+    <img {{action 'setRating0'}} class="prct-circle" src="/img/0_prct_active.png" />
+  {{/if}}
+
+  {{#if question.ratingBelow25}}
+    <img {{action 'setRating25'}} class="prct-circle" src="/img/25_prct_grey.png" />
+  {{else}}
+    <img {{action 'setRating25'}} class="prct-circle" src="/img/25_prct_active.png" />
+  {{/if}}
+
+  {{#if question.ratingBelow50}}
+    <img {{action 'setRating50'}} class="prct-circle" src="/img/50_prct_grey.png" />
+  {{else}}
+    <img {{action 'setRating50'}} class="prct-circle" src="/img/50_prct_active.png" />
+  {{/if}}
+
+  {{#if question.ratingBelow75}}
+    <img {{action 'setRating75'}} class="prct-circle" src="/img/75_prct_grey.png" />
+  {{else}}
+    <img {{action 'setRating75'}} class="prct-circle" src="/img/75_prct_active.png" />
+  {{/if}}
+
+  {{#if question.ratingBelow100}}
+    <img {{action 'setRating100'}} class="prct-circle" src="/img/100_prct_grey.png" />
+  {{else}}
+    <img {{action 'setRating100'}} class="prct-circle" src="/img/100_prct_active.png" />
+  {{/if}}
+</div>

@@ -3,6 +3,7 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
   sortAscending: true
   itemController: 'question'
   isSubmitting: false
+  hasSubmitted: false
 
   page: 1
   perPage: 4
@@ -14,7 +15,7 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
     submit: ->
       # check that all questions are rated, if not show an alert and do nothing
       questions = @get('model').filter( (question) ->
-        question.get('rating') != -1
+        question.get('isDirty') == true
       )
 
       if questions.get('length') < @get('model').get('length')
@@ -23,15 +24,21 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
         # console.log('DEBUG: saving questions...')
         self = @
         @set('isSubmitting', true)
-        promises = questions.map( (question) ->
+        Ember.RSVP.all(
+          questions.map( (question) ->
             question.save()
           )
-        Promise.all(
-          promises
-        ).then(
+        ).then( (->
+          # on successful save
           self.set('isSubmitting', false)
+          self.set('hasSubmitted', true)
           self.transitionToRoute('thankyou')
-        )
+        ), (->
+          # on failure
+          self.set('isSubmitting', false)
+          # save failed, so let's do something drastic
+          alert(I18n.t('failed_to_save_questions'))
+        ))
 
     nextPage: ->
       if @get('page') <= @get('pages') - 1

@@ -1,9 +1,13 @@
 class QuestionSerializer < ActiveModel::Serializer
   embed :ids, include: true
-  attributes :id, :name, :rating, :average_rating, :total_responses
+  attributes :id, :name, :flavour, :percentage, :total_responses
 
-  def average_rating
-    object.average_rating
+  def percentage
+    if object.flavour == 'Rating'
+      object.average_rating
+    elsif object.flavour == 'Predicate'
+      object.percentage_true
+    end
   end
 
   def total_responses

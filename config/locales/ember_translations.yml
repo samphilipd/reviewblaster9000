@@ -16,6 +16,8 @@ en:
   no_questions: 'No questions'
   thanks_for_response: 'Thank you for your response!'
   view_results: 'View results'
+  true: 'True'
+  false: 'False'
 
 es:
   hello: 'Hola Mundo!'
@@ -35,3 +37,5 @@ es:
   no_questions: 'Ningunos preguntas'
   thanks_for_response: 'Gracias por su respuesta!'
   view_results: 'Ver respuestas'
+  true: 'Verdad'
+  false: 'Falso'

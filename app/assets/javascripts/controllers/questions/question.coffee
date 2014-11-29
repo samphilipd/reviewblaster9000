@@ -1,4 +1,14 @@
 Rbnk.QuestionController = Em.ObjectController.extend
+  predicateSelectOptions: [
+    {label: I18n.t('true'), value: true},
+    {label: I18n.t('false'), value: false}
+  ]
+  currentSelectedPredicate: Ember.computed.alias('true_false')
+
+  updateModelPredicate: (->
+    @set('true_false', @get('currentSelectedPredicate'))
+  ).observes('currentSelectedPredicate')
+
   actions:
     setRating0: ->
       # console.log('setRating0!')
@@ -15,12 +25,6 @@ Rbnk.QuestionController = Em.ObjectController.extend
     setRating100: ->
       # console.log('setRating100!')
       @set('rating', 100)
-    setPredicate: (value) ->
-      console.log('setPredicate: %o', value)
-      if value == '1'
-        @set('true_false', true)
-      else if value == '0'
-        @set('true_false', false)
 
   ### Ratings ###
 

@@ -13,19 +13,12 @@ require 'rails_helper'
 
 RSpec.describe Question, :type => :model do
   it 'should require a name' do
-    @question = Question.create
+    @question = Question.create(flavour: 'Rating')
     expect(@question).to_not be_valid
   end
 
-  it 'should have a default rating of -1' do
-    @question = Question.create(name: 'Name')
-
-    expect(@question).to be_valid
-    expect(@question.rating).to eq -1
-  end
-
   it 'should create a new question with valid fields' do
-    @question = Question.new
+    @question = Question.new(flavour: 'Rating')
     @question.name = 'Name'
     @question.save
     expect(@question.persisted?).to eq true

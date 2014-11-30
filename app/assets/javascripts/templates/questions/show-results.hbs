@@ -1,4 +1,7 @@
 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+  <div class="summary">
+    <h4>{{i18n responses}}: {{total_responses}}</h4>
+  </div>
   <div class="list-group">
   {{#each question in controller}}
     <div class="list-group-item">
@@ -49,7 +52,4 @@
       <h4 class="list-group-item-heading">{{i18n no_questions}}!</h4>
     </div>
   {{/each}}
-  <div class="summary">
-    <h4>{{i18n responses}}: {{total_responses}}</h4>
-  </div>
 </div>

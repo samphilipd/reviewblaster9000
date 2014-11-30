@@ -3,14 +3,22 @@ class QuestionSerializer < ActiveModel::Serializer
   attributes :id, :name, :flavour, :percentage, :total_responses
 
   def percentage
-    if object.flavour == 'Rating'
-      object.average_rating
-    elsif object.flavour == 'Predicate'
-      object.percentage_true
+    if object.show_results
+      if object.flavour == 'Rating'
+        object.average_rating
+      elsif object.flavour == 'Predicate'
+        object.percentage_true
+      end
+    else
+      nil
     end
   end
 
   def total_responses
-    object.total_responses
+    if object.show_results
+      object.total_responses
+    else
+      nil
+    end
   end
 end

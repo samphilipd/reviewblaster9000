@@ -10,7 +10,12 @@ module Api
       # every login.
       def create
         if params[:username] == 'admin' and params[:password] == 'rbnk'
-          render json: { access_token: 12345, token_type: 'bearer'}
+          render json: {
+            user_id: 1,
+            access_token: 12345,
+            token_type: 'bearer',
+            expires_in: nil
+            }, status: 201
         else
           render json: {error: 'Invalid Login Details'}, status: 401
         end

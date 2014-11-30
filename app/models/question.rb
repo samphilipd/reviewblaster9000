@@ -14,6 +14,8 @@ class Question < ActiveRecord::Base
   validates :name, presence: true
   has_many :answers
 
+  attr_accessor :show_results
+
   def average_rating
     answers = Answer.where(question_id: self.id, flavour: 'Rating').pluck(:rating)
     if answers.length == 0

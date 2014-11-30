@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe '/api/v1/questions' do
   before(:each) do
-    Question.new(name: 'q1', flavour: 'Rating').save(validate: false)
-    Question.new(name: 'q2', flavour: 'Rating').save(validate: false)
+    q1 = Question.create(name: 'q1', flavour: 'Rating')
+    q2 = Question.create(name: 'q2', flavour: 'Rating')
+    Answer.create(question: Question.first, rating: 42, flavour: 'Rating')
+    Answer.create(question: Question.second, rating: 42, flavour: 'Rating')
   end
 
   it 'returns a list of questions' do
@@ -29,7 +31,7 @@ describe '/api/v1/questions' do
     question = Question.all.sample
     put "api/v1/questions/#{question.id}", {question: {rating: 42, flavour: 'Rating'}}.to_json, {'Content-Type' => 'application/json'}
 
-    answer = Answer.find_by(rating: 42)
+    answer = Answer.order("created_at").last
     expect(answer.question_id).to eq question.id
 
     response_json = JSON.parse(response.body)
@@ -45,5 +47,21 @@ describe '/api/v1/questions' do
     expect(response.code).to eq "400"
     expect(Answer.count).to eq n_answers # no new answers were created
     expect(response_json).to eq({"errors" => {"rating"=>["Must be an integer between 0 and 100"]}})
+  end
+
+  context 'authorization' do
+    it 'should return results when the user supplies valid authorization credentials' do
+      get '/api/v1/questions', nil, {'HTTP_AUTHORIZATION' => 'Bearer 12345'}
+      response_json = JSON.parse(response.body)
+
+      expect(response_json['questions'].first['percentage']).to eq 42
+    end
+
+    it 'should return nil results when no authorization credentials are supplied' do
+      get '/api/v1/questions'
+      response_json = JSON.parse(response.body)
+
+      expect(response_json['questions'].first['percentage']).to eq nil
+    end
   end
 end

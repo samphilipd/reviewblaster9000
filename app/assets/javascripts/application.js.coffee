@@ -16,7 +16,7 @@
 window.ENV = window.ENV || {}
 
 window.ENV['simple-auth'] =
-  authorizer: 'simple-auth-authorizer:oauth2-password-bearer'
+  authorizer: 'simple-auth-authorizer:oauth2-bearer'
   store: 'simple-auth-session-store:local-storage' # store access_token in local storage to preserve between refreshes
   authenticationRoute: 'login'
   routeAfterAuthentication: 'questions.show-results'

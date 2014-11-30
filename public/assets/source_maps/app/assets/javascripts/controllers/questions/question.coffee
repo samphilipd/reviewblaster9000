@@ -1,14 +1,4 @@
-Rbnk.QuestionController = Em.ObjectController.extend
-  predicateSelectOptions: [
-    {label: I18n.t('true'), value: true},
-    {label: I18n.t('false'), value: false}
-  ]
-  currentSelectedPredicate: Ember.computed.alias('true_false')
-
-  updateModelPredicate: (->
-    @set('true_false', @get('currentSelectedPredicate'))
-  ).observes('currentSelectedPredicate')
-
+Rbnk.QuestionController = Em.ObjectController.extend(
   actions:
     setRating0: ->
       # console.log('setRating0!')
@@ -25,6 +15,12 @@ Rbnk.QuestionController = Em.ObjectController.extend
     setRating100: ->
       # console.log('setRating100!')
       @set('rating', 100)
+    setPredicate: (value) ->
+      console.log('setPredicate: %o', value)
+      if value == '1'
+        @set('true_false', true)
+      else if value == '0'
+        @set('true_false', false)
 
   ### Ratings ###
 
@@ -64,3 +60,15 @@ Rbnk.QuestionController = Em.ObjectController.extend
     else
       "progress-bar-success"
   ).property('percentage')
+
+  ### Predicate ###
+
+  selectedValue: (->
+    if @get('true_false') == true
+      return '1'
+    else if @get('true_false') == false
+      return '0'
+    else
+      return null
+  ).property('true_false')
+)

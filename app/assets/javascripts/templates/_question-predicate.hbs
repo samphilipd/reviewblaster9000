@@ -1,10 +1,11 @@
 <div class="radio-buttons">
   <label>
-      {{view 'select' content=question.predicateSelectOptions
-                      optionValuePath="content.value"
-                      optionLabelPath="content.label"
-                      value=question.currentSelectedPredicate
-                      prompt="..."
-                    }}
+      {{view 'radio-button' value='1' checked=question.selectedValue}}
+      True
+  </label>
+
+  <label>
+      {{view 'radio-button' value='0' checked=question.selectedValue}}
+      False
   </label>
 </div>

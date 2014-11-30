@@ -3,7 +3,6 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
   sortAscending: true
   itemController: 'question'
   isSubmitting: false
-  hasSubmitted: false
 
   page: 1
   perPage: 4
@@ -31,7 +30,7 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
         ).then( (->
           # on successful save
           self.set('isSubmitting', false)
-          self.set('hasSubmitted', true)
+          self.store.unloadAll('question')
           self.transitionToRoute('thankyou')
         ), (->
           # on failure

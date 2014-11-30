@@ -14,7 +14,7 @@ class AnswerValidator < ActiveModel::Validator
         record.errors[:true_false] << 'Must be a boolean'
       end
     end
-    unless [rating, true_false].compact.length == 1
+    unless [record.rating, record.true_false].compact.length == 1
       record.errors[:answer] << 'Must have exactly one field'
     end
   end

@@ -10,7 +10,9 @@
           {{partial 'question-rating'}}
         {{else}} {{#if question.isPredicate}}
            {{partial 'question-predicate'}}
-        {{/if}}{{/if}}
+        {{else}} {{#if question.isFreeText}}
+          {{partial 'question-freetext'}}
+        {{/if}}{{/if}}{{/if}}
       </div>
     </div>
   {{else}}

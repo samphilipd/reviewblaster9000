@@ -13,8 +13,12 @@ class AnswerValidator < ActiveModel::Validator
       unless true_false == false or true_false == true
         record.errors[:true_false] << 'Must be a boolean'
       end
+    when 'FreeText'
+      unless record.free_text.length > 0
+        record.errors[:free_text] << 'Must contain one or more character'
+      end
     end
-    unless [record.rating, record.true_false].compact.length == 1
+    unless [record.rating, record.true_false, record.free_text].compact.length == 1
       record.errors[:answer] << 'Must have exactly one field'
     end
   end

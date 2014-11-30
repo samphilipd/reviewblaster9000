@@ -19,8 +19,13 @@ class Answer < ActiveRecord::Base
     def ensure_only_flavour_field
       if self.flavour == 'Rating'
         self.true_false = nil
+        self.free_text = nil
       elsif self.flavour == 'Predicate'
         self.rating = nil
+        self.free_text = nil
+      elsif self.flavour == 'FreeText'
+        self.rating = nil
+        self.true_false = nil
       end
     end
 end

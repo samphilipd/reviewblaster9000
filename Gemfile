@@ -37,7 +37,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'coffee-rails-source-maps', group: :development
+  # gem 'coffee-rails-source-maps', group: :development
   gem 'spring'
   gem 'annotate'
 end

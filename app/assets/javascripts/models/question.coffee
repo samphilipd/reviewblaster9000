@@ -2,6 +2,7 @@ Rbnk.Question = DS.Model.extend
   name: DS.attr('string')
   rating: DS.attr('number', {defaultValue: -1})
   true_false: DS.attr('boolean', {defaultValue: null})
+  free_text: DS.attr('string', {defaultValue: ''})
   flavour: DS.attr('string')
   percentage: DS.attr('number')
   total_responses: DS.attr('number')
@@ -26,3 +27,15 @@ Rbnk.Question = DS.Model.extend
     @get('flavour') == 'Predicate'
   ).property('flavour')
 
+  isFreeText: (->
+    @get('flavour') == 'FreeText'
+  ).property('flavour')
+
+  hasAnswer: (->
+    if @get('flavour') == 'Rating'
+      return @get('rating') != -1
+    else if @get('flavour') == 'Predicate'
+      return @get('true_false') != null
+    else if @get('flavour') == 'FreeText'
+      return @get('free_text').length > 0
+  ).property('flavour', 'true_false', 'rating', 'free_text')

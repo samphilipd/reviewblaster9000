@@ -64,4 +64,20 @@ RSpec.describe Answer, :type => :model do
       expect(Answer.count).to eq 1
     end
   end
+
+  context 'with flavour: FreeText' do
+    it 'should reject empty text fields' do
+      @answer = Answer.create(flavour: 'FreeText', question: @question)
+      expect(@answer).to_not be_valid
+      @answer.free_text = ''
+
+      expect(@answer.save).to eq false
+      expect(@answer).to_not be_valid
+    end
+
+    it 'should save with a valid text field' do
+      @answer = Answer.create(flavour: 'FreeText', question: @question, free_text: 'Foobar the fizzbuzz!')
+      expect(@answer).to be_valid
+    end
+  end
 end

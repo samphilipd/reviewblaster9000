@@ -14,7 +14,7 @@ Rbnk.QuestionsIndexController = Em.ArrayController.extend Rbnk.PaginatableMixin,
     submit: ->
       # check that all questions are rated, if not show an alert and do nothing
       questions = @get('model').filter( (question) ->
-        question.get('isDirty') == true
+        question.get('hasAnswer') == true
       )
 
       if questions.get('length') < @get('model').get('length')

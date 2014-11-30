@@ -1,6 +1,6 @@
 class QuestionSerializer < ActiveModel::Serializer
   embed :ids, include: true
-  attributes :id, :name, :flavour, :percentage, :total_responses
+  attributes :id, :name, :flavour, :percentage, :total_responses, :answers_array
 
   def percentage
     if object.show_results
@@ -17,6 +17,14 @@ class QuestionSerializer < ActiveModel::Serializer
   def total_responses
     if object.show_results
       object.total_responses
+    else
+      nil
+    end
+  end
+
+  def answers_array
+    if object.show_results
+      object.answers_array
     else
       nil
     end

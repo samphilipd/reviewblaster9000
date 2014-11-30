@@ -34,6 +34,15 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def answers_array
+    answers = Answer.where(question_id: self.id, flavour: 'FreeText').pluck(:free_text)
+    if answers.length == 0
+      return nil
+    else
+      return answers
+    end
+  end
+
   def total_responses
     Answer.where(question_id: self.id).count
   end

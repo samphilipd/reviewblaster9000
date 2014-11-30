@@ -10,3 +10,9 @@ Rbnk.ApplicationAdapter = DS.ActiveModelAdapter.extend({
   namespace: 'api/v1'
 })
 
+Rbnk.RawTransform = DS.Transform.extend(
+  deserialize: (serialized) ->
+    return serialized
+  serialize: (deserialized) ->
+    return deserialized
+)

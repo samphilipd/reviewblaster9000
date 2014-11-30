@@ -5,6 +5,7 @@ Rbnk.Question = DS.Model.extend
   free_text: DS.attr('string', {defaultValue: ''})
   flavour: DS.attr('string')
   percentage: DS.attr('number')
+  answers_array: DS.attr('raw')
   total_responses: DS.attr('number')
 
   truncated_percentage: (->
@@ -39,3 +40,11 @@ Rbnk.Question = DS.Model.extend
     else if @get('flavour') == 'FreeText'
       return @get('free_text').length > 0
   ).property('flavour', 'true_false', 'rating', 'free_text')
+
+  hasPercentage: (->
+    return @get('percentage') >= 0
+  ).property('percentage')
+
+  hasAnswersArray: (->
+    return @get('answers_array') and @get('answers_array').length > 0
+  ).property('answers_array')

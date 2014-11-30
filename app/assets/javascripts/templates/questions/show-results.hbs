@@ -5,7 +5,7 @@
       <h4 class="list-group-item-heading">{{question.name}}</h4>
       <div class="list-group-item-text">
           {{#if question.isRating}}
-            {{#if question.percentage}}
+            {{#if question.hasPercentage}}
               <div class="progress">
                 <div {{bind-attr class=":progress-bar question.ratedStatusClass"}} role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{unbound question.percentage}}%;">
                   <span>{{question.truncated_percentage}}%</span>
@@ -17,7 +17,7 @@
             </div>
             {{/if}}
           {{else}} {{#if question.isPredicate}}
-            {{#if question.percentage}}
+            {{#if question.hasPercentage}}
               <div class="list-text">
                 {{question.truncated_percentage}}% {{i18n said_true}}.<br />
                 {{question.truncated_inverse_percentage}}% {{i18n said_false}}.
@@ -27,7 +27,21 @@
               {{i18n no_ratings_for_question}}
             </div>
             {{/if}}
-          {{/if}} {{/if}}
+          {{else}} {{#if question.isFreeText}}
+            {{#if question.hasAnswersArray}}
+              <div class="list-text">
+                <ol>
+                  {{#each question.answers_array}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ol>
+              </div>
+            {{else}}
+            <div class="list-text">
+              {{i18n no_ratings_for_question}}
+            </div>
+            {{/if}}
+          {{/if}}{{/if}}{{/if}}
       </div>
     </div>
   {{else}}

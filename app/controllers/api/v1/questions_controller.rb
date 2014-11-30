@@ -27,7 +27,7 @@ module Api
 
       private
         def answer_params
-          params.require(:question).permit(:flavour, :rating, :true_false)
+          params.require(:question).permit(:flavour, :rating, :true_false, :free_text)
         end
 
         def questions_with_results_if_admin(questions)

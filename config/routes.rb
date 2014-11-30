@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # API routes go here
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
-      resources :questions, only: [:index, :show, :update] do
-      end
+      resources :questions, only: [:index, :show, :update]
+      post 'sign_in', to: 'session#create'
     end
   end
 

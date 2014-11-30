@@ -1,0 +1,15 @@
+<form class="form-signin" role="form" {{action 'authenticate' on='submit'}}>
+  <h2 class-"form-signin-heading">{{i18n 'login_form_title'}}</h2>
+  <label for="identification">{{i18n 'username'}}</label>
+  {{input type="text" class="form-control" id='identification' valueBinding='identification' placeholder='admin...' required="required" autofocus="autofocus"}}
+  <label for="password">{{i18n 'password'}}</label>
+  {{input type="text" class="form-control" id='password' type='password' valueBinding='password' placeholder='rbnk...' required="required"}}
+  <button class="btn btn-lg btn-block btn-primary" type="submit">{{i18n 'login'}}</button>
+</form>
+{{#if errorMessage}}
+<div class="alert alert-danger">
+  <p>
+    <strong>{{i18n 'login_failed'}}:</strong> <code>{{errorMessage}}</code>
+  </p>
+</div>
+{{/if}}

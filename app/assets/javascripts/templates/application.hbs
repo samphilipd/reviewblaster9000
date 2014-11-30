@@ -13,6 +13,11 @@
           <ul class="nav navbar-nav">
             <li>{{#link-to 'questions'}}{{i18n review}}{{/link-to}}</li>
             <li>{{#link-to 'questions.show-results'}}{{i18n results}}{{/link-to}}</li>
+            {{#if session.isAuthenticated}}
+            <li {{ action 'invalidateSession' }}><a href='#'>{{i18n 'logout'}}</a></li>
+            {{else}}
+            <li {{ action 'authenticateSession' }}><a href='#'>{{i18n 'login'}}</a></li>
+            {{/if}}
 {{!--             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li> --}}
           </ul>

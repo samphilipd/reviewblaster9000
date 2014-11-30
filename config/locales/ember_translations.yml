@@ -18,6 +18,12 @@ en:
   view_results: 'View results'
   true: 'True'
   false: 'False'
+  login: 'Login'
+  logout: 'Logout'
+  login_form_title: 'Please log in'
+  username: 'Username'
+  password: 'Password'
+  login_failed: 'Error logging in'
 
 es:
   hello: 'Hola Mundo!'
@@ -39,3 +45,9 @@ es:
   view_results: 'Ver respuestas'
   true: 'Verdad'
   false: 'Falso'
+  login: 'Iniciar sesión'
+  logout: 'Cerrar sesión'
+  login_form_title: 'Por favor, iniciar sesión'
+  username: 'Nombre de usuario'
+  password: 'Contraseña'
+  login_failed: 'No se podia inciar sesión'

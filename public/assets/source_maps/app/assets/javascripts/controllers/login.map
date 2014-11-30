@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/controllers/login.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,IAAI,CAAC,eAAL,GAAuB,EAAE,CAAC,UAAU,CAAC,MAAd,CAAqB,UAAU,CAAC,oBAAhC,EACrB;AAAA,IAAA,aAAA,EAAe,iDAAf;AAAA,IACA,YAAA,EAAc,IADd;GADqB,CAAvB,CAAA;AAAA"
+}

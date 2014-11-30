@@ -1,4 +1,4 @@
-Rbnk.ApplicationRoute = Em.Route.extend
+Rbnk.ApplicationRoute = Em.Route.extend SimpleAuth.ApplicationRouteMixin,
   actions:
     setLocaleEn: ->
       I18n.locale = 'en'

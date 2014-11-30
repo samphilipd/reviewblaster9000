@@ -14,7 +14,8 @@ Included features:
 - JSON serialization with Active Model Serializers
 - JSON deserialization with ember-data
 - HTML templating using handlebars
-- CSS styling using SASS and bootstrap
+- CSS styling using SASS
+- Responsive design courtesy of bootstrap
 - Internationalization (Spanish and English) using i18n-js
 - Dynamic pagination
 - A sense of humour

@@ -1,11 +1,11 @@
 <div class="radio-buttons">
   <label>
       {{view 'radio-button' value='1' checked=question.selectedValue}}
-      True
+      {{i18n 'true'}}
   </label>
 
-  <label>
+  <label class="pull-right">
       {{view 'radio-button' value='0' checked=question.selectedValue}}
-      False
+      {{i18n 'false'}}
   </label>
 </div>

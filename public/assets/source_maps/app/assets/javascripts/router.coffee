@@ -5,6 +5,7 @@ Rbnk.Router.reopen
 
 Rbnk.Router.map ()->
   @resource 'questions', {path: '/'}, ->
-    @route 'show-results'
+    @route 'show-results' # requires authentication
   @route 'thankyou'
+  @route 'login'
 
